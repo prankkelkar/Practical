@@ -1,0 +1,45 @@
+
+Enter Number of Predicates:2
+Enter Predicate 1:-[P]
+        Enter No.of Arguments for Predicate P:2
+        Enter argument 1:(a)
+        Enter argument 2:(b)
+Enter Predicate 2:-[P]
+        Enter No.of Arguments for Predicate P:2
+        Enter argument 1:(c)
+        Enter argument 2:(b)
+        Predicates are
+        P(a,b)
+        P(c,b)
+        Substitution is
+        c/a
+Do you want to continue(y/n): y
+        
+Enter Number of Predicates:2
+Enter Predicate 1:-[P]
+        Enter No.of Arguments for Predicate P:-[3]
+        Enter argument 1:(a)
+        Enter argument 2:(b)
+        Enter argument 3:(c)
+Enter Predicate 2:-[P]
+        Enter No.of Arguments for Predicate P:-[2]
+        Enter argument 1:(d)
+        Enter argument 2:(r)
+        Predicates are
+        P(a,b,c)
+        P(d,r)
+Arguments Not Same..!Do you want to continue(y/n): y
+
+Enter Number of Predicates:2
+Enter Predicate 1:-[P]
+        Enter No.of Arguments for Predicate P:-[2]
+        Enter argument 1:(1)
+        Enter argument 2:(3)
+       Enter Predicate 2:[Q]
+        Enter No.of Arguments for Predicate Q:-[2]
+        Enter argument 1:(3)
+        Enter argument 2:(4)
+        Predicates are
+        P(1,3)
+        Q(3,4)
+Predicates are not same..

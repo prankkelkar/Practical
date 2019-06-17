@@ -1,0 +1,171 @@
+
+#include<graphics.h>
+#include<math.h>
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+void linebres(float x1, float y1, float x2, float y2)
+{
+float dx,dy,p0,pnew,xnew,ynew,m;
+putpixel(x1,y1,15);
+putpixel(x2,y2,15);
+
+if(x1==x2)
+{
+if(y1<y2)
+{
+   while(y1!=y2)
+   {
+   ynew=y1+1;
+   putpixel(x1,ynew,15);
+   y1=ynew;
+   }
+}
+else if(y2<y1)
+{
+   while(y1!=y2)
+   {
+    ynew=y1-1;
+   putpixel(x1,ynew,15);
+   y1=ynew;
+   }
+}
+}
+else if(x1!=x2)
+   {
+   dx=x2-x1;
+   dy=y2-y1;
+   m=dy/dx;
+       if(m>-1 && y1>y2)
+       {
+       p0=-2*dy-dx;
+       while(x1<x2)
+       {
+	  if(p0<0)
+	  {
+	    xnew=x1+1;
+	    ynew=y1;
+	    putpixel(xnew,ynew,15);
+	    pnew=p0-2*dy;
+	    p0=pnew;
+	    x1=xnew;
+	    y1=ynew;
+	   }
+	   else
+	   {
+	      xnew=x1+1;
+	    ynew=y1-1;
+	    putpixel(xnew,ynew,15);
+	    pnew=p0-2*dx-2*dy;
+	    p0=pnew;
+	    x1=xnew;
+	    y1=ynew;
+	  }
+       }
+     }
+     else if(m<=-1 && y1>y2)
+     {
+     p0=-2*dx-dy;
+     while(x1<x2)
+      {
+       if(p0>0)
+	{
+	xnew=x1;
+	ynew=y1-1;
+	putpixel(xnew,ynew,15);
+	pnew=p0-2*dx;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+	}
+	else
+	{
+	 xnew=x1+1;
+	ynew=y1-1;
+	putpixel(xnew,ynew,15);
+	pnew=p0-2*dy-2*dx;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+	}
+      }
+   }
+   else if(m<1 && y1<=y2)
+   {
+   p0=2*dy-dx;
+    while(x1<x2)
+    {
+      if(p0<0)
+       {
+	xnew=x1+1;
+	ynew=y1;
+	putpixel(xnew,ynew,15);
+	pnew=p0+2*dy;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+       }
+       else
+       {
+	xnew=x1+1;
+	ynew=y1+1;
+	putpixel(xnew,ynew,15);
+	pnew=p0+2*dy-2*dx;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+       }
+     }
+   }
+   else if(m>=1 && y1<y2)
+   {
+   p0=2*dx-dy;
+    while(x1<x2)
+    {
+      if(p0<0)
+      {
+	xnew=x1;
+	ynew=y1+1;
+	putpixel(xnew,ynew,15);
+	pnew=p0+2*dx;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+      }
+      else
+      {
+	xnew=x1+1;
+	ynew=y1+1;
+	putpixel(xnew,ynew,15);
+	pnew=p0+2*dx-2*dy;
+	p0=pnew;
+	x1=xnew;
+	y1=ynew;
+       }
+      }
+     }
+    }
+   }
+
+
+void main()
+{
+int gd=DETECT,gm;
+initgraph(&gd,&gm,"..\\BGI");
+linebres(100,100,100,200);
+linebres(100,200,200,200);
+linebres(200,200,200,100);
+linebres(100,100,200,100);
+linebres(160,50,160,150);
+linebres(160,50,260,50);
+linebres(260,150,260,50);
+
+linebres(160,150,260,150);
+linebres(100,200,160,150);
+linebres(200,200,260,150);
+linebres(100,100,160,50);
+linebres(200,100,260,50);
+
+getch();
+closegraph();
+}
